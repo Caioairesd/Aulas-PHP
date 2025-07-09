@@ -12,7 +12,8 @@
 
     <?php
 
-        echo"<h1>Hello Word, PHP-7!</h1>";
+        phpinfo()
+        
 
     ?>
 
