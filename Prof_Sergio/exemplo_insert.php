@@ -10,15 +10,18 @@
 <body>
     <?php
 
-    $name = "Xenia";
-    $name = "NULL";
-    if (isset($name)) {
-        print "This line isn't going to be reached/n";
+        $nota = 3;
+        if ($nota >= 7) {
+            echo "Aluno aprovado com nota $nota";
+        }
+        if ($nota <7 && $nota >3) {
+            echo "Aluno em exame com nota $nota";
+        }
+        if ($nota <=3) {
+            echo "Aluno reprovado com nota $nota";
 
-    }
+        }
 
-
-s
     ?>
 </body>
 
