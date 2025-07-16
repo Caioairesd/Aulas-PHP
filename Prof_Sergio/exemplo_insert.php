@@ -10,17 +10,17 @@
 <body>
     <?php
 
-        $nota = 3;
-        if ($nota >= 7) {
-            echo "Aluno aprovado com nota $nota";
-        }
-        if ($nota <7 && $nota >3) {
-            echo "Aluno em exame com nota $nota";
-        }
-        if ($nota <=3) {
-            echo "Aluno reprovado com nota $nota";
+    $nota = 3;
+    if ($nota >= 7) {
+        echo "Aluno aprovado com nota $nota";
+    }
+    if ($nota < 7 && $nota > 3) {
+        echo "Aluno em exame com nota $nota";
+    }
+    if ($nota <= 3) {
+        echo "Aluno reprovado com nota $nota";
 
-        }
+    }
 
     ?>
 </body>
