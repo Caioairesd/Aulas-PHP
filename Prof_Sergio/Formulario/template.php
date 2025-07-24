@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerenciador de tarefas</title>
 </head>
 
 <body>
     <h1>Gerenciador de tarefas</h1>
-    <form>
+    <form action="" method="">
         <fieldset>
             <legend>Nova tarefa</legend>
             <label>
@@ -53,23 +53,23 @@
         <br>
         <input type="submit" value="cadastrar" />
 
-        <table border="1">
+        <table border="">
             <tr>
                 <th>Tarefas</th>
                 <th>Descrição</th>
-                <th>prazo</th>
-                <th>prioridade</th>
-                <th>Ccnluida</th>
+                <th>Prazo</th>
+                <th>Prioridade</th>
+                <th>Concluida</th>
 
             </tr>
-            <?php foreach ($lista_tarefas as $tarefa)
+            <?php foreach ($lista_tarefas as $tarefas)
             : ?>
                 <tr>
-                    <td><?php echo $tarefa['nome']; ?></td>
-                    <td><?php echo $tarefa['descricao']; ?></td>
-                    <td><?php echo $tarefa['prazo']; ?></td>
-                    <td><?php echo $tarefa['prioridade']; ?></td>
-                    <td><?php echo $tarefa['concluida']; ?></td>
+                    <td><?php echo $tarefas['nome']; ?></td>
+                    <td><?php echo $tarefas['descricao']; ?></td>
+                    <td><?php echo $tarefas['prazo']; ?></td>
+                    <td><?php echo $tarefas['prioridade']; ?></td>
+                    <td><?php echo $tarefas['concluida']; ?></td>
 
                 </tr>
             <?php endforeach; ?>
