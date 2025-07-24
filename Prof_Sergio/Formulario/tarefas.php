@@ -1,58 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+if (isset($_GET['nome']) && $_GET['nome'] != '') {
+    $tarefa = array();
 
-<body>
+    $tarefa['nome'] = $_GET['nome'];
 
-
-
-
-    <?php
-    session_start();
-    $lista_tarefas = array();
-    if (isset($_GET["nome"]) && $_GET["nome"] !='') {
-
-        $tarefa = array();
-        $_SESSION['lista_tarefas'][] = $_GET["nome"];
-
-    }
-
-    if (isset($_SESSION['lista_tarefas'])) {
-
-        $lista_tarefas = $_SESSION['lista_tarefas'];
-
+    if (isset($_GET['descricao'])) {
+        $tarefa['descricao'] = $_GET['descricao'];
     } else {
-        $lista_tarefas = array();
+        $tarefa['descricao'] = '';
     }
 
+    if (isset($_GET['prazo'])) {
+        $tarefa['prazo'] = $_GET['prazo'];
+    } else {
+        $tarefa['prazo'] = '';
+    }
 
-    include "template.php"
-        //session.destroy();
-    
-        ?>
+    $tarefa['prioridade'] = $_GET['prioridade'];
 
-    <table>
-        <tr>
-            <th>Tarefas</th>
-        </tr>
-        <?php foreach ($lista_tarefas as $tarefa)
-        : ?>
-            <tr>
-                <td><?php echo $tarefa; ?></td>
-            </tr>
-        <?php endforeach; ?>
+    if (isset($_GET['concluida'])) {
+        $tarefa['concluida'] = $_GET['concluida'];
+    } else {
+        $tarefa['concluida'] = '';
+    }
 
+    $_SESSION['lista_tarefas'][] = $tarefa;
+}
 
-    </table>
-
+$lista_tarefas = array();
+if (isset($_SESSION['lista_tarefas'])) {
+    $lista_tarefas = $_SESSION['lista_tarefas'];
+} else {
+    $lista_tarefas = array();
+}
 
 
+if (array_key_exists('$lista_tarefas', $_SESSION)) {
+    $lista_tarefas = $_SESSION['lista_tarefas'];
+} else {
+    $lista_tarefas = [];
 
-</body>
+}
 
-</html>
+include "template.php"
+    ?>
