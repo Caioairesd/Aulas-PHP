@@ -19,6 +19,7 @@ function redimensionar($imagem, $largura, $altura)
     return $dadosImagem;
 }
 
+$msg = '';
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["foto"])) {
     if ($_FILES["foto"]["error"] === 0) {
         $nome = $_POST['nome'];
@@ -33,11 +34,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["foto"])) {
         $stmt->bindParam(':foto', $foto, PDO::PARAM_LOB);
 
         if ($stmt->execute()) {
-            echo 'Funcionário cadastrado com sucesso!';
+            $msg = 'Funcionário cadastrado com sucesso!';
         } else {
-            echo 'Erro ao cadastrar funcionário!';
+            $msg = 'Erro ao cadastrar funcionário!';
         }
+    } else {
+        $msg = 'Erro no upload da imagem.';
     }
+} else {
+    $msg = 'Acesso inválido.';
 }
 ?>
-<a href="consulta_funcionario.php">Listar Funcionários</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Salvar Funcionário</title>
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cadastro_funcionario.php">Cadastro de novo funcionário</a></li>
+            <li><a href="consulta_funcionario.php" class="ativo">Lista de Funcionários</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="text-align:center;">
+        <h1><?php echo $msg; ?></h1>
+        <a href="consulta_funcionario.php" class="botao-voltar">Voltar para Lista de Funcionários</a>
+    </div>
+</body>
+</html>
