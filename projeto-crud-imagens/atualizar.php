@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $cargo = $_POST['cargo'];
 
     if (!empty($_FILES['foto']['tmp_name'])) {
-        function redimensionar($imagem, $largura, $altura) {
+        function redimensionar($imagem, $largura, $altura)
+        {
             list($larguraOriginal, $alturaOriginal) = getimagesize($imagem);
             $nova_imagem = imagecreatetruecolor($largura, $altura);
             $imagemOriginal = imagecreatefromjpeg($imagem);
@@ -58,34 +59,53 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <title>Editar Funcionário</title>
     <link rel="stylesheet" href="estilo.css" />
 </head>
+
 <body>
+    <script>
+        setTimeout(() => {
+            const msg = document.querySelector('.mensagem');
+            if (msg) {
+                msg.style.transition = 'opacity 0.5s ease';
+                msg.style.opacity = '0';
+                setTimeout(() => {
+                    msg.style.display = 'none';
+                }, 500); // espera a transição terminar
+            }
+        }, 4000);
+    </script>
 
-    <div class="container">
-        <h1>Editar Funcionário</h1>
-
-        <?php if ($msg): ?>
-            <?= $msg ?>
-        <?php endif; ?>
-
-        <form method="post" enctype="multipart/form-data">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($funcionario['nome']) ?>" required>
-
-            <label for="cargo">Cargo:</label>
-            <input type="text" id="cargo" name="cargo" value="<?= htmlspecialchars($funcionario['cargo']) ?>" required>
-
-            <label for="foto">Nova Imagem (opcional):</label>
-            <input type="file" id="foto" name="foto" accept="image/*">
-
-            <div class="butoes">
-                <button type="submit">Atualizar</button>
+    <div class="pagina-wrapper">
+        <div class="container">
+            <div class="setTimeout"></div>
+            <div class="titulo">
+                <h1>Editar Funcionário</h1>
             </div>
-        </form>
+            <?php if ($msg): ?>
+                <div class="mensagem"><?= $msg ?></div>
+            <?php endif; ?>
+
+            <form method="post" enctype="multipart/form-data">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($funcionario['nome']) ?>" required>
+
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo" value="<?= htmlspecialchars($funcionario['cargo']) ?>"
+                    required>
+
+                <label for="foto">Nova Imagem (opcional):</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+
+                <div class="butoes">
+                    <button type="submit">Atualizar</button>
+                </div>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+
+    <?php require_once 'includes/rodape.php'; ?>

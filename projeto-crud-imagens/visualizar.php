@@ -44,6 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["excluir_id"])) {
             <p>Funcionário não encontrado.</p>
         <?php endif; ?>
     </div>
-</body>
 
-</html>
+    <?php require_once 'includes/rodape.php'; ?>

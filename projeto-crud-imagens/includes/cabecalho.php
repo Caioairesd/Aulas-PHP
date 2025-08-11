@@ -11,8 +11,8 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="index.php">Início</a></li>
-            <li><a href="criar.php">Cadastro de novo funcionário</a></li>
+            <li><a href="index.php">Painel Principal</a></li>
+            <li><a href="criar.php">Novo funcionário</a></li>
             <li><a href="listar.php" >Lista de funcionários</a></li>
         </ul>
     </nav>
