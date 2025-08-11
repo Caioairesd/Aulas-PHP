@@ -1,0 +1,23 @@
+Listar redes do docker
+
+docker network ls
+
+-----------------------------
+Remover rede 
+
+docker network rm <nome da rede>
+
+-----------------------------
+Criar rede docker
+
+docker create <nome-da-redek>
+
+-----------------------------
+Criar container 
+
+ docker run -d --name <Nome do container> --network <minha-rede-docker> -p 80:80 <php 8.3.10-apache>
+
+-----------------------------
+Listar todos os containers
+
+docker ps -a

@@ -88,9 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["foto"])) {
             <label for="cargo">Cargo:</label>
             <input type="text" id="cargo" name="cargo" required>
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone">
-
             <label for="foto">Imagem:</label>
             <input type="file" id="foto" name="foto" accept="image/*" required>
 
