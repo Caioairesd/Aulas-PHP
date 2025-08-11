@@ -1,5 +1,6 @@
 <?php
-require_once 'conexao.php';
+require_once 'includes/conexao.php';
+require_once 'includes/cabecalho.php';
 
 $funcionario = null;
 
@@ -24,18 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["excluir_id"])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Visualizar Funcionário</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-<h1>Dados do Funcionário</h1>
-<?php if ($funcionario): ?>
-    <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
-    <p>Cargo: <?= htmlspecialchars($funcionario['cargo']) ?></p>
-    <img src="data:image/jpeg;base64,<?= base64_encode($funcionario['foto']) ?>" alt="Foto" style="max-width:200px;">
-<?php else: ?>
-    <p>Funcionário não encontrado.</p>
-<?php endif; ?>
+    <div class="visualizar-funcionario">
+        <h1>Dados do Funcionário</h1>
+        <?php if ($funcionario): ?>
+            <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
+            <p>Cargo: <?= htmlspecialchars($funcionario['cargo']) ?></p>
+            <img src="data:image/jpeg;base64,<?= base64_encode($funcionario['foto']) ?>" alt="Foto"
+                style="max-width:200px;">
+        <?php else: ?>
+            <p>Funcionário não encontrado.</p>
+        <?php endif; ?>
+    </div>
 </body>
+
 </html>

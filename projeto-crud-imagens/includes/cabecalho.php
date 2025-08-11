@@ -11,14 +11,11 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="cadastro_funcionario.php">Cadastro de novo funcionário</a></li>
-            <li><a href="consulta_funcionario.php" class="ativo">Lista de Funcionários</a></li>
+            <li><a href="index.php">Início</a></li>
+            <li><a href="criar.php">Cadastro de novo funcionário</a></li>
+            <li><a href="listar.php" >Lista de funcionários</a></li>
         </ul>
     </nav>
 
 
 
-</body>
-
-</html>

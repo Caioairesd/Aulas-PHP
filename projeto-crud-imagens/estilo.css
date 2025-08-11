@@ -1,0 +1,332 @@
+/* ===========================
+   RESET BÁSICO E ESTRUTURA
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+/* ===========================
+   BARRA DE NAVEGAÇÃO
+=========================== */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navbar a:hover,
+.navbar a.ativo {
+  background-color: #4CAF50;
+  border-radius: 4px;
+}
+
+/* ===========================
+   PÁGINA INICIAL
+=========================== */
+.pagina-inicial {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.bem-vindo {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #4CAF50, #81C784);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.bem-vindo h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.bem-vindo p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.bem-vindo img {
+  max-width: 320px;
+  margin-top: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.frase-motivacional {
+  background-color: #fff;
+  padding: 30px;
+  margin: 0 auto 60px;
+  max-width: 700px;
+  font-style: italic;
+  font-size: 22px;
+  color: #444;
+  border-left: 6px solid #4CAF50;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.onda-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.onda {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===========================
+   FORMULÁRIO DE CADASTRO
+=========================== */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  margin: 40px auto;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.titulo h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.titulo h2 {
+  font-size: 18px;
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="tel"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* ===========================
+   MENSAGENS DE SUCESSO/ERRO
+=========================== */
+.sucesso, .erro {
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: opacity 0.5s ease;
+}
+
+.sucesso {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.erro {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* ===========================
+   VISUALIZAÇÃO DE FUNCIONÁRIO
+=========================== */
+.visualizar-funcionario {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+.visualizar-funcionario h1 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.visualizar-funcionario p {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.visualizar-funcionario img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+}
+
+.visualizar-funcionario p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   LISTA DE FUNCIONÁRIOS
+=========================== */
+.lista-funcionarios {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+.lista-funcionarios h1 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.lista-funcionarios table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lista-funcionarios th,
+.lista-funcionarios td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.lista-funcionarios th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.lista-funcionarios tr:hover {
+  background-color: #f1f1f1;
+}
+
+.lista-funcionarios img {
+  max-width: 80px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+.lista-funcionarios a,
+.lista-funcionarios button {
+  padding: 6px 10px;
+  margin: 2px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+.lista-funcionarios a:hover,
+.lista-funcionarios button:hover {
+  background-color: #45a049;
+}
+
+.lista-funcionarios form {
+  display: inline;
+}
+
+/* ===========================
+   RODAPÉ FIXO
+=========================== */
+.rodape {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 16px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.rodape strong {
+  color: #81C784;
+}
+
+/* ===========================
+   AJUSTE DE ALTURA DA PÁGINA
+=========================== */
+.pagina-wrapper {
+  min-height: calc(100vh - 100px); /* Altura da tela menos o rodapé */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 120px; /* Espaço para o rodapé fixo */
+}
+
+
+
+
